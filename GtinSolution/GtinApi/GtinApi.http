@@ -1,0 +1,6 @@
+@GtinApi_HostAddress = http://localhost:4200/
+
+GET {{GtinApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

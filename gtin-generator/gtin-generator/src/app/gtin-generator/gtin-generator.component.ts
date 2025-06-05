@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-gtiin-generator',
+  selector: 'app-gtin-generator',
   standalone: true,
   templateUrl: './gtin-generator.component.html',
   styleUrls: ['./gtin-generator.component.css'],

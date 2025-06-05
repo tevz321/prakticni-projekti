@@ -1,13 +1,64 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="sl">
 <head>
-  <meta charset="utf-8">
-  <title>GtinGenerator</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="Inel-logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INEL Generatorji</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+      margin: 0;
+    }
+    header img {
+      height: 50px;
+      margin-right : 9500px;
+    }
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .card {
+      border: 1px solid #ddd;
+      padding: 2rem;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
+    .h1 {
+      font-family: Arial;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
+
+  <header>
+    <img src="Inel-logo.png" alt="" />
+    <h1 class="h1">INEL Generatorji</h1>
+  </header>
+
+  <div class="card-container">
+    <div class="card">
+      <a href="app">GTIN Generator</a>
+    </div>
+    <div class="card">
+      <a href="/sscc-generator">SSCC Generator</a>
+    </div>
+  </div>
+
 </body>
 </html>

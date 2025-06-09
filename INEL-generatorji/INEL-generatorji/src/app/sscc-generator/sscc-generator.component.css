@@ -1,0 +1,82 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-family: Arial;
+}
+
+.st {
+  font-size: 17px;
+  font-family: Arial;
+}    
+
+.generiraj {
+  color : white;
+  background-color: #1a3d7e;
+  border: darkblue 2px solid;
+}
+
+.izracunaj {
+  color : white;
+  background-color: #1a3d7e;
+  border: darkblue 2px solid;
+}
+
+.h1 {
+  font-family: Arial;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+  margin: 0;
+}
+
+header img {
+  height: 40px;
+  object-fit: contain;
+  margin-top : 0px;
+  margin-right: 1761px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 2rem;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  font-family: Arial;
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
+}

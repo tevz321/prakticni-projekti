@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-sscc-generator',
-  imports: [],
   templateUrl: './sscc-generator.component.html',
-  styleUrl: './sscc-generator.component.css'
+  styleUrls: ['./sscc-generator.component.css']
 })
-export class SsccGeneratorComponent {
 
+export class SsccGeneratorComponent {
+  numberOfCodes: number = 1;
+  companyPrefix: string = '1234567';
+  extensionDigit: string = '1';
 }

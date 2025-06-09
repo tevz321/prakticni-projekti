@@ -13,7 +13,6 @@ import { RouterModule } from '@angular/router';
   imports: [FormsModule, HttpClientModule, CommonModule, RouterModule],
   providers: [GtinService],
   
-  
 })            
 export class GtinGeneratorComponent {
   private readonly baseUrl = 'http://localhost:5068/api/gtin'; // Adjust the base URL as needed	
@@ -44,10 +43,6 @@ export class GtinGeneratorComponent {
     });
   }  
 
- 
-
-
-
  calculate(): void {
   if (!this.isValidInput()) {
     this.checkDigitResult = 'Napaka: neveljaven vnos';
@@ -68,6 +63,5 @@ export class GtinGeneratorComponent {
       console.log('check digit calculation completed.');
      }
     });
-  
   }
 }

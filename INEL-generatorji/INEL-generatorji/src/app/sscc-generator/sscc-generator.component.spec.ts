@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { SsccGeneratorComponent } from './sscc-generator.component';
 
@@ -8,7 +9,8 @@ describe('SsccGeneratorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SsccGeneratorComponent]
+      declarations: [SsccGeneratorComponent],
+      imports: [FormsModule] 
     })
     .compileComponents();
 

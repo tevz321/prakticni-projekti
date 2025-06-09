@@ -63,6 +63,7 @@ public class SSCCgenerator
 		int modValue = sum % 10;
 		int checkDigit = modValue == 0 ? 0 : 10 - modValue;
 
-		return (char)('0' + checkDigit);
+		return (char) ('0' + checkDigit);
     }
+
 }

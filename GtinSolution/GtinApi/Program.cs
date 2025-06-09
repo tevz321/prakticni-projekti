@@ -29,3 +29,10 @@ app.UseCors("AllowFrontend");
 
 app.MapControllers();
 app.Run();
+
+static void Main(string[] args)
+{
+    var generator = new SSCCgenerator("1234567");
+    string ssccCode = generator.GenerateSSCC();
+    Console.WriteLine($"Generirana SSCC koda: {ssccCode}");
+}

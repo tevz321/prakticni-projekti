@@ -27,7 +27,7 @@ public static class GtinHelper
 
 
     public static string AppendCheckDigit(string number)
-    {
+    
         int checkDigit = CalculateCheckDigit(number);
         return number + checkDigit;
     }

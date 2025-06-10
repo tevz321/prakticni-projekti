@@ -65,5 +65,4 @@ public class SSCCgenerator
 
 		return (char) ('0' + checkDigit);
     }
-
 }

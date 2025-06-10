@@ -1,27 +1,47 @@
-<div class="main-container">
-<header>
-<img src="Inel-logo.png" alt="INEL logo"/>
-<h1 class="h1">INEL Generatorji</h1>
-</header>
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Generiranje SSCC kod</title>
+    <link rel="stylesheet" href="./sscc-generator.component.css" />
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <img src="Inel-logo.png" alt="INEL logo" />
+            <h1 class="h1">INEL Generatorji</h1>
+        </header>
 
-<div class="card-container">
-  <div class="card">
-    <a routerLink="/gtin-generator">GTIN Generator</a>
-  </div>
-  <div class="card">
-    <a routerLink="/sscc-generator">SSCC Generator</a>
-  </div>
-</div>
-<br>
-<br>
-  <h2 class="title">Pozdravljeni v SSCC generatorju</h2>
-  <br>
+        <div class="card-container">
+            <div class="card">
+                <a href="/gtin-generator">GTIN Generator</a>
+            </div>
+            <div class="card">
+                <a href="/sscc-generator">SSCC Generator</a>
+            </div>
+        </div>
 
-  <div>
-    <div>
-      <label class="st" for="numberOfCodes"><strong>Število SSCC kod:</strong></label>
+        <h2 class="title">Pozdravljeni v SSCC generatorju</h2>
+
+        <div>
+            <div>
+                <label class="st" for="numberOfCodes"><strong>Število SSCC kod:</strong></label>
+                <input id="numberOfCodes" type="number" min="1" value="10" />
+            </div>
+            <br />
+            <div>
+                <label class="st" for="companyPrefix"><strong>GS1 Company prefiks</strong></label>
+                <input id="companyPrefix" type="text" value="1234567" />
+            </div>
+            <br />
+            <div>
+                <label class="st" for="extensionDigit"><strong>Extension digit</strong></label>
+                <input id="extensionDigit" type="text" maxlength="1" value="1" />
+            </div>
+            <br />
+            <button id="generateBtn">Generiraj</button>
+            <br /><br />
+            <textarea id="output" rows="12" cols="56" readonly></textarea>
+        </div>
     </div>
-    <br>
-    <textarea rows="12" cols="56" readonly></textarea>
-  </div>
-</div>

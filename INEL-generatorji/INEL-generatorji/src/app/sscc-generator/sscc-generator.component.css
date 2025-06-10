@@ -14,23 +14,6 @@
   font-family: Arial;
 }
 
-.st {
-  font-size: 17px;
-  font-family: Arial;
-}    
-
-.generiraj {
-  color : white;
-  background-color: #1a3d7e;
-  border: darkblue 2px solid;
-}
-
-.izracunaj {
-  color : white;
-  background-color: #1a3d7e;
-  border: darkblue 2px solid;
-}
-
 .h1 {
   font-family: Arial;
   margin-bottom: 2rem;
@@ -47,8 +30,9 @@ body {
 header img {
   height: 40px;
   object-fit: contain;
-  margin-top : 0px;
+  margin-top : -100px;
   margin-right: 1761px;
+  margin-bottom: 20px;
 }
 
 .card-container {
@@ -73,10 +57,20 @@ header img {
 
 .card:hover {
   transform: scale(1.05);
+  background-color: #1a3d7e;
+  color: white;
+  cursor: pointer;
 }
 
 .card a {
   text-decoration: none;
   color: #003366;
   font-weight: bold;
+}
+
+.generateBtn {
+  color : white;
+  background-color: #1a3d7e;
+  border: darkblue 2px solid;
+  margin-right: 361px;
 }

@@ -6,6 +6,7 @@
   margin: 0 auto;
   padding: 20px;
   text-align: center;
+  margin-top: 40px;
 }
 
 .title {
@@ -47,8 +48,9 @@ body {
 header img {
   height: 40px;
   object-fit: contain;
-  margin-top : 0px;
   margin-right: 1761px;
+  margin-top: -160px;
+  margin-bottom: 20px;
 }
 
 .card-container {
@@ -73,6 +75,9 @@ header img {
 
 .card:hover {
   transform: scale(1.05);
+  background-color: #1a3d7e;
+  color: white;
+  cursor: pointer;
 }
 
 .card a {

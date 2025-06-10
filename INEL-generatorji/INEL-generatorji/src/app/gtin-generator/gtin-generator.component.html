@@ -1,26 +1,25 @@
 <div class="main-container">
-<header>
-<img src="Inel-logo.png" alt="INEL logo"/>
-<h1 class="h1">INEL Generatorji</h1>
-</header>
-
-<div class="card-container">
+  <header>
+    <img src="Inel-logo.png" alt="INEL logo" />
+    <h1 class="h1">INEL Generatorji</h1>
+  </header>
+ <div class="card-container">
   <div class="card">
     <a routerLink="/gtin-generator">GTIN Generator</a>
   </div>
   <div class="card">
     <a routerLink="/sscc-generator">SSCC Generator</a>
   </div>
-</div>
-<br>
-<br>
-  <h2 class="title">Pozdravljeni v GTIN generatorju</h2>
-  <br>
+ </div>
+ <br>
+ <br>
+ <h2 class="title">Pozdravljeni v GTIN generatorju</h2>
+ <br>
 
   <div>
     <div>
       <label class="st" for="numberOfCodes"><strong>Število GTIN-14 kod:</strong></label>
-      <input id="numberOfCodes" type="number" [(ngModel)]="numberOfCodes" min="1" style="width: 42px; margin-right: 117px; margin-left: 27px;"/>
+      <input id="numberOfCodes" type="number" [(ngModel)]="numberOfCodes" min="1" style="width: 43px; margin-right: 117px; margin-left: 27px;"/>
       <button class="generiraj" (click)="generateGTIN()">Generiraj</button>
     </div>
     <br>

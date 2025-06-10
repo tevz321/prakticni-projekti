@@ -1,46 +1,47 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: white;
+.title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-family: Arial;
+  text-align: center;
 }
 
 header img {
-  display: block;
-  margin: 20px auto;
-  max-width: 150px;
-}
-
-h1 {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-top : 0px;
+  margin-right: 1761px;
 }
 
 .card-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .card {
-  background-color: white;
-  padding: 20px 40px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  color: #123366; /* prilagodi barvo */
-  text-align: center;
-  transition: box-shadow 0.3s ease;
-  user-select: none;
-  text-decoration: none;
-  display: flex;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  font-family: Arial;
+  font-size: 20px;
   align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
 .card:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transform: scale(1.05);
+  background-color: #1a3d7e;
+  color: white;
+  cursor: pointer;
+}
+
+.card a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
 }
 

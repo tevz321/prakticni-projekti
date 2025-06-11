@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient, HttpHeaders }  from '@angular/common/http';
-import { GtinService } from '../gtin.service';
+import { GtinService } from './gtin.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 

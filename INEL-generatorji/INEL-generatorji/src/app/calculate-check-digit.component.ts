@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GtinService } from './gtin.service';
+import { GtinService } from './gtin-generator/gtin.service';
 
 @Component({
   selector: 'app-calculate-check-digit',

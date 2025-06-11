@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';  
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +17,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    HttpClientModule,
+    NgModule,
     BrowserModule,
     FormsModule,
     AppComponent,

@@ -1,14 +1,14 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 
 @Component({
   standalone: true,
   selector: 'app-sscc-generator',
   templateUrl: './sscc-generator.component.html',
   styleUrl: './sscc-generator.component.css',
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, NgModule]
 })
 
 export class SsccGeneratorComponent {

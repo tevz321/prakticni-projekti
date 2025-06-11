@@ -1,12 +1,14 @@
 ﻿using System;
 
-public class SSCCgenerator
+namespace GtinApi.Helpers;
+
+public class SSCChelper
 {
 	private readonly string gs1CompanyPrefix;
 	private int serialNumber;
 	private readonly char extensionDigit;
 
-	public SSCCgenerator(string gs1CompanyPrefix, int initialSerialNumber = 0, char extensionDigit = '0')
+	public SSCChelper(string gs1CompanyPrefix, int initialSerialNumber = 0, char extensionDigit = '0')
 	{
 		if (string.IsNullOrEmpty(gs1CompanyPrefix))
 			throw new ArgumentException ("GS1 Company Prefix cannot be null or empty.");

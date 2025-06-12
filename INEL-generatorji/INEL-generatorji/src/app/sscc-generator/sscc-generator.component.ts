@@ -18,6 +18,7 @@ export class SsccGeneratorComponent {
   companyPrefix: string = '1234567';
   extensionDigit: string = '1';
   generatedSSCCs: string[] = [];
+  generatedText: string = '';
 
   constructor(private ssccService: SsccService) {}
 
@@ -26,6 +27,7 @@ export class SsccGeneratorComponent {
       .subscribe({
         next: (data) => {
           this.generatedSSCCs = data;
+          this.generatedText = data.join('\n');
           console.log('Generated SSCCs:', data);
         },
         error: (err) => {

@@ -8,17 +8,16 @@ public static class GtinHelper
     public static int CalculateCheckDigit(string number)
     {
         if (string.IsNullOrWhiteSpace(number) || number.Length < 7 || number.Length > 13 || !number.All(char.IsDigit))
-        {
             throw new ArgumentException("Input must be a numeric string with 7 to 13 digits.");
-        }
 
         int sum = 0;
+        bool multiplyByThree = true;
 
-        for (int i = 0; i < number.Length; i++)
+        for (int i = number.Length - 1; i >= 0; i--)
         {
             int digit = number[i] - '0';
-
-            sum += digit * ((i + 1) % 2 == 0 ? 3 : 1);
+            sum += multiplyByThree ? digit * 3 : digit;
+            multiplyByThree = !multiplyByThree;
         }
 
         int mod = sum % 10;

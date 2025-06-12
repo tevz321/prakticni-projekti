@@ -1,37 +1,38 @@
-﻿using GtinApi.Helpers;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using GtinApi.Helpers;
 
 namespace GtinApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    public class SSCCcontroller : ControllerBase
+    [Route("api/sscc")]
+    public class SSCCController : ControllerBase
     {
-        [HttpPost("generate")]
-        public IActionResult Generate([FromBody] SSCCRequestModel request)
+        public class SSCCRequest
         {
-            try
-            {
-                var generator = new SSCChelper(request.Gs1CompanyPrefix, request.InitialSerialNumber, request.ExtensionDigit);
-
-                string sscc = generator.GenerateSSCC();
-                return Ok(sscc);
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(new { error = ex.Message });
-            }
-            catch (InvalidOperationException ex)
-            {
-                return BadRequest(new { error = ex.Message });
-            }
+            public string Gs1CompanyPrefix { get; set; } = string.Empty;
+            public string ExtensionDigit { get; set; } = "0";
+            public int InitialSerialNumber { get; set; } = 0;
+            public int Count { get; set; } = 1;
         }
-    }
 
-    public class  SSCCRequestModel
-    {
-        public string Gs1CompanyPrefix { get; set; } = string.Empty;
-        public int InitialSerialNumber { get; set; } = 0;
-        public char ExtensionDigit { get; set; } = '0'; 
+        [HttpPost("generate")]
+        public ActionResult<IEnumerable<string>> Generate([FromBody] SSCCRequest request)
+        {
+            if (string.IsNullOrEmpty(request.Gs1CompanyPrefix) || request.Gs1CompanyPrefix.Any(c => !char.IsDigit(c)))
+                return BadRequest("Invalid GS1 Company Prefix");
+
+            if (string.IsNullOrEmpty(request.ExtensionDigit) || request.ExtensionDigit.Length != 1 || !char.IsDigit(request.ExtensionDigit[0]))
+                return BadRequest("Invalid extension digit");
+
+            var generator = new SSCChelper(request.Gs1CompanyPrefix, request.InitialSerialNumber, request.ExtensionDigit[0]);
+
+            var result = new List<string>();
+            for (int i = 0; i < request.Count; i++)
+            {
+                result.Add(generator.GenerateSSCC());
+            }
+
+            return Ok(result);
+        }
     }
 }

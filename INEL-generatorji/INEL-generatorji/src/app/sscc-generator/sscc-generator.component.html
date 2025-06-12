@@ -31,22 +31,22 @@
         <div>
             <div>
                 <label style="margin-left: -110px; font-family: Arial; font-size: 17px;" for="numberOfCodes"><strong>Število SSCC kod:</strong></label>
-                <input id="numberOfCodes" type="number" min="1" value="10" style="margin-left: 70px; width: 100px;"/>
+                <input id="numberOfCodes" type="number" min="1" [(ngModel)]="numberOfCodes" style="margin-left: 70px; width: 100px;"/>
             </div>
             <br />
             <div>
                 <label style="margin-left: -156px; font-family: Arial; font-size: 17px" for="companyPrefix"><strong>GS1 Company prefiks</strong></label>
-                <input id="companyPrefix" type="text" value="1234567" style="margin-left: 42px; width: 54px;"/>
+                <input id="companyPrefix" type="text" [(ngModel)]="companyPrefix" style="margin-left: 42px; width: 54px;"/>
             </div>
             <br />
             <div>
                 <label style="margin-left: -199px;" for="extensionDigit"><strong>Extension digit</strong></label>
-                <input id="extensionDigit" type="text" maxlength="1" value="1" style="margin-left: 103px; width: 10px" />
+                <input id="extensionDigit" type="text" maxlength="1" [(ngModel)]="extensionDigit" style="margin-left: 103px; width: 10px" />
             </div>
             <br/><br>
             <button (click)="generate()" class="generateBtn">Generiraj</button>
             <br><br>
-            <textarea id="output" rows="12" cols="56" readonly></textarea>
+            <textarea id="output" rows="12" cols="56" readonly [(ngModel)]="generatedText"></textarea>
         </div>
     </div>
 </body>

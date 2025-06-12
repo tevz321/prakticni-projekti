@@ -43,7 +43,6 @@ public class GtinController : ControllerBase
 
 
         var checkDigit = GtinHelper.CalculateCheckDigit(number.Number);
-        return Ok(number.Number + checkDigit);
-
+        return Ok($"{number.Number}{checkDigit}");
     }
 }

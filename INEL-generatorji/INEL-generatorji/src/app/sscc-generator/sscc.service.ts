@@ -12,7 +12,8 @@ export class SsccService {
     const body = {
         gs1CompanyPrefix: companyPrefix,
         extensionDigit: extensionDigit,
-        initialSerialNumber: 0
+        initialSerialNumber: 0,
+        count: count
     };
      
     return this.http.post<string[]>(`${this.apiUrl}/generate`, body);

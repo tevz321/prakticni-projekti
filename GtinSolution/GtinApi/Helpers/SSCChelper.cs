@@ -47,7 +47,7 @@ namespace GtinApi.Helpers
             int sum = 0;
             bool multiplyByThree = true;
 
-            // GS1 zahteva: od desne proti levi, začenši z 3
+            
             for (int i = input.Length - 1; i >= 0; i--)
             {
                 int digit = input[i] - '0';

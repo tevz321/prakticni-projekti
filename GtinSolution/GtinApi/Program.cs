@@ -28,9 +28,27 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowAngularApp");
-
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
 app.UseAuthorization();
-
 app.MapControllers();
+
+//SPA konfiguracija
+app.UseSpa(spa =>
+{
+    spa.Options.SourcePath = "ClientApp";
+
+    //Produkcijski fallback
+    spa.Options.DefaultPageStaticFileOptions = new StaticFileOptions
+    {
+        OnPrepareResponse = ctx =>
+        {
+            ctx.Context.Response.Headers.Append("Cache-Control", "no-cache, no-store");
+            ctx.Context.Response.Headers.Append("Pragma", "no-cache");
+            ctx.Context.Response.Headers.Append("Expires", "-1");
+        }
+    };
+});
 
 app.Run();

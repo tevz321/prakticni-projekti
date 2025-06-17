@@ -43,7 +43,7 @@ namespace GtinApi.Helpers
         {
             if (!input.All(char.IsDigit))
                 throw new ArgumentException("Input must be numeric.");
-
+             
             int sum = 0;
             bool multiplyByThree = true;
 
@@ -51,7 +51,7 @@ namespace GtinApi.Helpers
             for (int i = input.Length - 1; i >= 0; i--)
             {
                 int digit = input[i] - '0';
-                sum += multiplyByThree ? digit * 3 : digit;
+                sum += multiplyByThree ? digit * 3 : digit; 
                 multiplyByThree = !multiplyByThree;
             }
 

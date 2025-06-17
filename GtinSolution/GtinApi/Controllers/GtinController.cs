@@ -23,7 +23,7 @@ public class GtinController : ControllerBase
         for (int i = 0; i < count; i++)
         { 
             var baseNumber = rand.Next(100000, 999999).ToString() +
-                             rand.Next(100000, 999999).ToString(); //12 mest skupaj
+                             rand.Next(100000, 999999).ToString(); 
             var checkDigit = GtinHelper.CalculateCheckDigit(baseNumber);
             result.Add(baseNumber + checkDigit);
         }

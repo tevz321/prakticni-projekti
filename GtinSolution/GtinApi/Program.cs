@@ -18,7 +18,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
-
+builder.Services.AddSpaStaticFiles(configuration => configuration.RootPath = "/wwwroot");
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -34,21 +34,24 @@ app.UseRouting();
 app.UseAuthorization();
 app.MapControllers();
 
+app.UseSpaStaticFiles();
+
 //SPA konfiguracija
 app.UseSpa(spa =>
 {
-    spa.Options.SourcePath = "ClientApp";
+    spa.Options.SourcePath = "/wwwroot";
 
     //Produkcijski fallback
-    spa.Options.DefaultPageStaticFileOptions = new StaticFileOptions
-    {
-        OnPrepareResponse = ctx =>
-        {
-            ctx.Context.Response.Headers.Append("Cache-Control", "no-cache, no-store");
-            ctx.Context.Response.Headers.Append("Pragma", "no-cache");
-            ctx.Context.Response.Headers.Append("Expires", "-1");
-        }
+    spa.Options.DefaultPageStaticFileOptions = new StaticFileOptions { 
+        OnPrepareResponse = context => { if (context.File.Name == "index.html") { 
+                context.Context.Response.Headers.Append("Cache-Control", "no-cache, no-store, must-revalidate");
+                context.Context.Response.Headers.Append("Pragma", "no-cache"); 
+                context.Context.Response.Headers.Append("Expires", "0"); 
+            } 
+        }, 
     };
 });
+
+
 
 app.Run();

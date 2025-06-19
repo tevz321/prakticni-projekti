@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Host.UseWindowsService();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", policy =>

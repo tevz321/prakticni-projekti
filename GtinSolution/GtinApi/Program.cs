@@ -6,19 +6,20 @@ static void Main(string[] args) { }
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngularApp",
-        policy => policy.WithOrigins("http://localhost:4200")
-                        .AllowAnyMethod()
-                        .AllowAnyHeader());
+    options.AddPolicy("AllowAngularApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:4200") // optional for dev
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
 });
 
-builder.Services.AddControllers();
-builder.Services.AddSpaStaticFiles(configuration => configuration.RootPath = "/wwwroot");
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -29,29 +30,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowAngularApp");
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+app.UseStaticFiles(); // Serves Angular from wwwroot
+
 app.UseRouting();
 app.UseAuthorization();
+
 app.MapControllers();
 
-app.UseSpaStaticFiles();
-
-//SPA konfiguracija
-app.UseSpa(spa =>
-{
-    spa.Options.SourcePath = "/wwwroot";
-
-    //Produkcijski fallback
-    spa.Options.DefaultPageStaticFileOptions = new StaticFileOptions { 
-        OnPrepareResponse = context => { if (context.File.Name == "index.html") { 
-                context.Context.Response.Headers.Append("Cache-Control", "no-cache, no-store, must-revalidate");
-                context.Context.Response.Headers.Append("Pragma", "no-cache"); 
-                context.Context.Response.Headers.Append("Expires", "0"); 
-            } 
-        }, 
-    };
-});
-
-
+// Fallback to index.html for Angular client-side routes
+app.MapFallbackToFile("index.html");
 
 app.Run();

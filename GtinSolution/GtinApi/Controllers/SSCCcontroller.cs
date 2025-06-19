@@ -6,11 +6,12 @@ namespace GtinApi.Controllers
     [ApiController]
     [Route("api/sscc")]
     public class SSCCController : ControllerBase
+
     {
         public class SSCCRequest
         {
             public string Gs1CompanyPrefix { get; set; } = string.Empty;
-            public string ExtensionDigit { get; set; } = "0";
+            public string ExtensionDigit { get; set; } = "0"; 
             public int InitialSerialNumber { get; set; } = 0;
             public int Count { get; set; } = 1;
         }
